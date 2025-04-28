@@ -10,13 +10,14 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'bukky-branch', url: 'https://github.com/bukkia/my-sample.git'
+                git branch: 'master', url: 'https://github.com/bukkia/my-sample.git'
             }
         }
 
         stage('Build Docker Image') {
             steps {
                 echo '🔨 Building Docker image...'
+                echo 'i am working hard'
                 sh "docker build -t ${FULL_IMAGE_NAME} -t ${IMAGE_NAME}:latest ."
             }
         }
